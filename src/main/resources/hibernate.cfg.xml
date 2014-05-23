@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <!--<property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.1.100:1521:xe</property>-->
+        <!--<property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.4.101:1521:ISUM</property>-->
+         <property name="hibernate.connection.url">jdbc:oracle:thin:@sybase.metropolitan.ac.rs:1521:xe</property> 
+        <property name="hibernate.connection.username">lib</property>
+        <property name="hibernate.connection.password">lib</property>
+        
+                
+        
+        <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <!--<property name="connection.url">jdbc:mysql://localhost:3306/isum?characterEncoding=UTF-8</property>-->
+        <!--<property name="hibernate.connection.username">root</property>-->
+        <!--<property name="hibernate.connection.password"></property>-->
+        <property name="hibernate.jdbc.fetch_size">100</property> 
+        <property name="hibernate.default_batch_fetch_size">100</property>
+        
+        <property name="hibernate.show_sql">false</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">false</property>
+        <property name="generate_statistics">false</property>
+
+            
+    </session-factory>
+</hibernate-configuration>

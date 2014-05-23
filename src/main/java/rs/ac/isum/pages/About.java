@@ -24,6 +24,11 @@ public class About
             test.remove(0);
             
         }
+        
+        Autor pomocni = new Autor();
+        pomocni.setBaIme("Ime");
+        pomocni.setBaPrezime("Prezime");
+        bibl.dodajAutora(pomocni);
     }
 
 }

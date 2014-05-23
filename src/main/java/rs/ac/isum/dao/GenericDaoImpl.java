@@ -18,7 +18,7 @@ import rs.ac.isum.entities.AbstractEntity;
 //import rs.ac.isum.entities.IsumUser;
 //import rs.ac.isum.entities.Predmet;
 
-public class GenericDaoImpl<T extends AbstractEntity> implements GenericDao<T> {
+public class GenericDaoImpl <T extends AbstractEntity> implements GenericDao<T> {
 
     @Inject
     private Session hibernate;

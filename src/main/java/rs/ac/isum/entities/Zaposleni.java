@@ -33,7 +33,7 @@ import javax.persistence.TemporalType;
 @Table(name = "ZAPOSLENI")
 @NamedQueries({
     @NamedQuery(name = "Zaposleni.findAll", query = "SELECT z FROM Zaposleni z")})
-public class Zaposleni implements Serializable {
+public class Zaposleni extends AbstractEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id

@@ -31,7 +31,7 @@ import javax.persistence.TemporalType;
 @Table(name = "AUTOR")
 @NamedQueries({
     @NamedQuery(name = "Autor.findAll", query = "SELECT a FROM Autor a")})
-public class Autor implements Serializable {
+public class Autor extends AbstractEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id

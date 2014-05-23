@@ -30,6 +30,8 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
     @Inject
     private GenericDao dao;
     
+    AbstractEntity biznis = new AbstractEntity();
+    
 
     @Override
     public List<Autor> sviAutori() {
@@ -89,8 +91,7 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
 
     @Override
     public void obrisiAutora(long id) {
-        AbstractEntity autorTemp = (AbstractEntity) dao.loadById(Autor.class, id);
-        dao.delete(autorTemp);
+        
     }
 
     @Override
@@ -100,7 +101,7 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
 
     @Override
     public void dodajAutora(Autor autor) {
-        dao.saveOrUpdate(autor);
+        dao.merge(autor);
     }
 
     @Override

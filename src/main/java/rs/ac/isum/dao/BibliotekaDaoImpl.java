@@ -1,7 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Klasa koja implementira metode iz BibliotekaDao interfejsa.
  */
 
 package rs.ac.isum.dao;
@@ -20,6 +18,7 @@ import rs.ac.isum.entities.Student;
 import rs.ac.isum.entities.Zaduzenja;
 import rs.ac.isum.entities.Zaposleni;
 import rs.ac.isum.entities.ZaposleniBibliotekar;
+import rs.ac.isum.entities.AbstractEntity;
 
 /**
  *
@@ -45,52 +44,53 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
 
     @Override
     public List<Izdavac> sviIzdavaci() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Izdavac.class);
     }
 
     @Override
     public List<Knjiga> sveKnjige() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Knjiga.class);
     }
 
     @Override
     public List<Oblast> sveOblaste() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Oblast.class);
     }
 
     @Override
     public List<Osoba> sveOsobe() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Osoba.class);
     }
 
     @Override
     public List<Publikacija> svePublikacija() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Publikacija.class);
     }
 
     @Override
     public List<Student> sviStudenti() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Student.class);
     }
 
     @Override
     public List<Zaduzenja> svaZaduzenja() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return dao.loadAllActive(Zaduzenja.class);
+   }
 
     @Override
     public List<Zaposleni> sviZaposleni() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Zaposleni.class);
     }
 
     @Override
     public List<ZaposleniBibliotekar> sviBibliotekari() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(ZaposleniBibliotekar.class);
     }
 
     @Override
     public void obrisiAutora(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AbstractEntity autorTemp = (AbstractEntity) dao.loadById(Autor.class, id);
+        dao.delete(autorTemp);
     }
 
     @Override
@@ -100,7 +100,7 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
 
     @Override
     public void dodajAutora(Autor autor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        dao.saveOrUpdate(autor);
     }
 
     @Override

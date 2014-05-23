@@ -30,6 +30,7 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
     
     @Override
     public List<Jezik> sviJezici() {
+        System.out.println("");
         return dao.loadAllActive(Jezik.class);
     }
 

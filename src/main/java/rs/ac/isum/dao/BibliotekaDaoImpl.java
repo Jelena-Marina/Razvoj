@@ -27,10 +27,15 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
     public List<Autor> sviAutori() {
         return dao.loadAllActive(Autor.class);
     }
-
+    
     @Override
     public List<Jezik> sviJezici() {
         return dao.loadAllActive(Jezik.class);
+    }
+
+    @Override
+    public void obrisiAutora() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

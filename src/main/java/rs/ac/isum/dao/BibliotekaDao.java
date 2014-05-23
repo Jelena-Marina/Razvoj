@@ -18,5 +18,6 @@ import rs.ac.isum.entities.Jezik;
 public interface BibliotekaDao {
     
     public abstract List<Autor> sviAutori();
+    public abstract void obrisiAutora();
     public abstract List<Jezik> sviJezici();
 }

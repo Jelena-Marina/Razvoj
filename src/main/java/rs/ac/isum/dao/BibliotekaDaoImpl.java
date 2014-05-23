@@ -30,7 +30,7 @@ public class BibliotekaDaoImpl implements BibliotekaDao{
 
     @Override
     public List<Jezik> sviJezici() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.loadAllActive(Jezik.class);
     }
     
 }
